@@ -6,11 +6,12 @@ public class Spring : MonoBehaviour
     [Space]
     [SerializeField] private float _force;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log(collision.GetContact(0).normal);
+        if (collision.rigidbody != null)
         {
-            collision.rigidbody.AddForce(Vector2.up * _force, ForceMode2D.Impulse);
+            collision.rigidbody.AddForce(Vector3.up * _force, ForceMode.Impulse);
         }
     }
 }

@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public float acceleration = 10f;
 
-    private Rigidbody2D rb;
+    private Rigidbody rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -22,23 +22,23 @@ public class PlayerController : MonoBehaviour
     {
         // Перемещение по горизонтали
         float moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector3(moveInput * moveSpeed, rb.velocity.y);
 
         // Прыжок
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
         // Ускорение
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.A))
         {
-            rb.velocity -= new Vector2(transform.right.x, 0) * acceleration * Time.deltaTime;
+            rb.velocity -= new Vector3(transform.right.x, 0) * acceleration * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.D))
         {
-            rb.velocity += new Vector2(transform.right.x, 0) * acceleration * Time.deltaTime;
+            rb.velocity += new Vector3(transform.right.x, 0) * acceleration * Time.deltaTime;
         }
     }
 }
