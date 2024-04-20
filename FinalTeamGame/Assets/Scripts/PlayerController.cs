@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public float acceleration = 10f;
 
+    private bool isJumping;
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        isJumping = false;
     }
 
     void Update()
@@ -25,20 +27,14 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector3(moveInput * moveSpeed, rb.velocity.y);
 
         // Прыжок
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isJumping = true;
         }
-
-        // Ускорение
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.A))
-        {
-            rb.velocity -= new Vector3(transform.right.x, 0) * acceleration * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.D))
-        {
-            rb.velocity += new Vector3(transform.right.x, 0) * acceleration * Time.deltaTime;
-        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        isJumping = false;
     }
 }
