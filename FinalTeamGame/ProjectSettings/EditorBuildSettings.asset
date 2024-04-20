@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 0a9bde0a0cbe3224cb80394536d05552
+  - enabled: 1
+    path: Assets/Scenes/Chooselevel.unity
+    guid: 5d04680162ab7384b9b8c032e852ca91
+  - enabled: 1
+    path: Assets/Scenes/AreYouSureQuitGame.unity
+    guid: f6c9b21532ce6cb4fac0ac05c8bbf80f
+  - enabled: 1
+    path: Assets/Scenes/TestLexxScene.unity
+    guid: 6b36a9efbd06d784b99350abcb38acc3
   m_configObjects: {}

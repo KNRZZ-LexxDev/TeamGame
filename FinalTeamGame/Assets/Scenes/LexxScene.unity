@@ -239,6 +239,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2895547473587018119, guid: 13217973d208f4741ab381c8d1ebcf8a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5827156772948520371, guid: 13217973d208f4741ab381c8d1ebcf8a,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099196370737379118, guid: 13217973d208f4741ab381c8d1ebcf8a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1390643514562996689, guid: 13217973d208f4741ab381c8d1ebcf8a, type: 3}
     - {fileID: 1390643514562996525, guid: 13217973d208f4741ab381c8d1ebcf8a, type: 3}
