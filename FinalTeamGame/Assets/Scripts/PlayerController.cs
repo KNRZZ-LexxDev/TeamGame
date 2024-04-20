@@ -25,14 +25,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.T))
-        {
-            transform.localScale = new Vector3(_startScale.x, _startScale.y * 0.5f, _startScale.z);
-        }
-        if (Input.GetKeyUp(KeyCode.T))
-        {
-            transform.localScale = _startScale;
-        }
         PlayerMovement();
         PlayerPause();
     }
