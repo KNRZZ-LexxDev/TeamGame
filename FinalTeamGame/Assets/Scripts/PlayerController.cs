@@ -11,7 +11,11 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private Rigidbody rb;
     private bool isOpen;
-
+    private Vector3 _startScale; //Чтобы знать размерчик сами понимаете
+    private void Awake()
+    {
+        _startScale = transform.localScale;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,6 +25,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.T))
+        {
+            transform.localScale = new Vector3(_startScale.x, _startScale.y * 0.5f, _startScale.z);
+        }
+        if (Input.GetKeyUp(KeyCode.T))
+        {
+            transform.localScale = _startScale;
+        }
         PlayerMovement();
         PlayerPause();
     }
