@@ -49,6 +49,17 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJumping = true;
         }
+
+        //Сжатие
+        if (Input.GetKey(KeyCode.T))
+        {
+            transform.localScale = new Vector3(_startScale.x, _startScale.y * 0.5f, _startScale.z);
+        }
+        //Расширение
+        if (Input.GetKeyUp(KeyCode.T))
+        {
+            transform.localScale = _startScale;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
