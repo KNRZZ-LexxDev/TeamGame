@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 1969450870797959193}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -560,7 +560,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 40
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!65 &1969450870797959193
 BoxCollider:
@@ -569,7 +569,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390643514562996523}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: aff2585e402799143b3ee503b310ddb9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

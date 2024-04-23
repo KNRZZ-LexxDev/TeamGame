@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AreYouSureQuitGame.unity
     guid: f6c9b21532ce6cb4fac0ac05c8bbf80f
   - enabled: 1
-    path: Assets/Scenes/TestLexxScene.unity
+    path: Assets/Scenes/Level_1(Lexx).unity
     guid: 6b36a9efbd06d784b99350abcb38acc3
+  - enabled: 1
+    path: Assets/Scenes/Level_2(Lexx).unity
+    guid: 1467c9edfd1a45e40b72a8244ad8ce3e
   m_configObjects: {}

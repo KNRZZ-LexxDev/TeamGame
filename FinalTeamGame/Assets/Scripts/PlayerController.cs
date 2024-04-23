@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.T))
         {
             transform.localScale = _startScale;
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     private void OnCollisionEnter(Collision collision)
