@@ -20,7 +20,6 @@ public class Wind : MonoBehaviour
     {
         if (collider.TryGetComponent<Rigidbody>(out var rb))
         {
-            Debug.Log("sss");
             rb.AddForce(transform.up * WindForce * Time.fixedDeltaTime);
         }
     }

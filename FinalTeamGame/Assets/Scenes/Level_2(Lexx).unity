@@ -1431,6 +1431,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1390643514562996522, guid: 13217973d208f4741ab381c8d1ebcf8a,
+        type: 3}
+      propertyPath: ActiveCrouch
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1390643514562996523, guid: 13217973d208f4741ab381c8d1ebcf8a,
         type: 3}
       propertyPath: m_Name

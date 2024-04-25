@@ -8,7 +8,6 @@ public class Spring : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.GetContact(0).normal);
         if (collision.rigidbody != null)
         {
             collision.rigidbody.AddForce(Vector3.up * _force, ForceMode.Impulse);

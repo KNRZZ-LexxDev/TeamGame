@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 10f;
     public GameObject Leave;
     public GameObject SureLeave;
+    public bool ActiveCrouch = false;
 
     private bool isJumping;
     private Rigidbody rb;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        PlayerCrouch();
         PlayerPause();
     }
 
@@ -43,22 +45,38 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
         }
 
-        //Сжатие
-        if (Input.GetKey(KeyCode.T))
-        {
-            transform.localScale = new Vector3(_startScale.x, _startScale.y * 0.5f, _startScale.z);
-        }
-        //Расширение
-        if (Input.GetKeyUp(KeyCode.T))
-        {
-            transform.localScale = _startScale;
-        }
-
         if(Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    public void PlayerCrouch()
+    {
+        if(ActiveCrouch == false)
+        {
+            return;
+        }
+        else
+        {
+            //Сжатие
+            if (Input.GetKey(KeyCode.T))
+            {
+                transform.localScale = new Vector3(_startScale.x, _startScale.y * 0.5f, _startScale.z);
+            }
+            //Расширение
+            if (Input.GetKeyUp(KeyCode.T))
+            {
+                transform.localScale = _startScale;
+            }
+        }
+    }
+
+    public void OnCrouch()
+    {
+        ActiveCrouch = true;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         isJumping = false;
@@ -68,6 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (SureLeave.activeSelf == true) return;
             Leave.SetActive(!Leave.activeSelf);
         }
     }

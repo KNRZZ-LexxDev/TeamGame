@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_2(Lexx).unity
     guid: 1467c9edfd1a45e40b72a8244ad8ce3e
+  - enabled: 1
+    path: Assets/Scenes/Level_3(Lexx).unity
+    guid: 5f4611d16d2b63d4f90f487548675ee3
   m_configObjects: {}

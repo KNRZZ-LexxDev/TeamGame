@@ -546,6 +546,7 @@ MonoBehaviour:
   acceleration: 10000
   Leave: {fileID: 1408653883502065131}
   SureLeave: {fileID: 6963502796344373977}
+  ActiveCrouch: 0
 --- !u!54 &311084367616503316
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -903,7 +904,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5737391555995276131}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1390643514562996522}
+        m_MethodName: PlayerContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4869143800734764464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1637,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6139058036010973259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4418000507347077856}
+        m_MethodName: OpenMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8059537642928995927
 GameObject:
   m_ObjectHideFlags: 0

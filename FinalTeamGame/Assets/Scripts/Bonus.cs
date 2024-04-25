@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class NextLevel : MonoBehaviour
+
+public class Bonus : MonoBehaviour
 {
-    public int SceneNum;
+    public PlayerController Player;
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneNum);        
+            Player.OnCrouch();
+            Destroy(gameObject);
         }
     }
 }
