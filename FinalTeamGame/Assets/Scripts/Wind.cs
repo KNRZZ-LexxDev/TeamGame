@@ -7,6 +7,7 @@ public class Wind : MonoBehaviour
     public float WindForce;
     public ParticleSystem particles;
     public BoxCollider boxcollider;
+    public string windDirection;
 
     private void Awake()
     {
@@ -18,9 +19,14 @@ public class Wind : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (collider.TryGetComponent<Rigidbody>(out var rb))
+        if (collider.TryGetComponent<Rigidbody>(out var rb_up) && windDirection == "UP")
         {
-            rb.AddForce(transform.up * WindForce * Time.fixedDeltaTime);
+            rb_up.AddForce(transform.up * WindForce * Time.fixedDeltaTime);
+        }
+
+        if (collider.TryGetComponent<Rigidbody>(out var rb_forward) && windDirection == "RIGHT")
+        {
+            rb_forward.AddForce(transform.right * WindForce * Time.fixedDeltaTime);
         }
     }
 }
