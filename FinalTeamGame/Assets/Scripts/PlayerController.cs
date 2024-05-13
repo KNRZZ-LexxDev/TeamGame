@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public GameObject Leave;
     public GameObject SureLeave;
     public bool ActiveCrouch = false;
+    AudioSource audioSource;
+
+    public AudioClip jump;
 
     private bool isJumping;
     private Rigidbody rb;
@@ -21,6 +24,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         isJumping = false;
         isOpen = false;
     }
@@ -41,6 +45,7 @@ public class PlayerController : MonoBehaviour
         // Прыжок
         if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
         {
+            audioSource.PlayOneShot(jump, 0.5F);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJumping = true;
         }

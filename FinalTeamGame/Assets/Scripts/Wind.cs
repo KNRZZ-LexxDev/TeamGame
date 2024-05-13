@@ -9,12 +9,16 @@ public class Wind : MonoBehaviour
     public BoxCollider boxcollider;
     public string windDirection;
 
+    public AudioClip windSound;
+    AudioSource audioSource;
+
     private void Awake()
     {
         particles = GetComponentInChildren<ParticleSystem>();
         boxcollider = GetComponent<BoxCollider>();
         var shape = particles.shape;
-        shape.scale = transform.localScale; 
+        shape.scale = transform.localScale;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerStay(Collider collider)
@@ -28,5 +32,7 @@ public class Wind : MonoBehaviour
         {
             rb_forward.AddForce(transform.right * WindForce * Time.fixedDeltaTime);
         }
+
+        audioSource.PlayOneShot(windSound, 0.2F);
     }
 }
