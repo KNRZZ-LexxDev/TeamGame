@@ -14,7 +14,7 @@ public class TimePlatfrom : MonoBehaviour
         }
     }
 
-    private void DropPlatform()
+    public void DropPlatform()
     {
         gameObject.AddComponent<Rigidbody>();
     }
