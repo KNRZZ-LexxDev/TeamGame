@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_10(Lexx).unity
     guid: 4695a392aac7f5a46897b0bd952a824a
+  - enabled: 1
+    path: Assets/Scenes/Level _11 (Ilya).unity
+    guid: 319e38184b14a9e4ba1eace09865fc2b
   m_configObjects: {}

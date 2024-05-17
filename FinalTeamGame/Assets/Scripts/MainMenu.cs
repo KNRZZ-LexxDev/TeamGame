@@ -70,6 +70,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(12);
     }
 
+    public void OpenLevel_11()
+    {
+        SceneManager.LoadScene(13);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
